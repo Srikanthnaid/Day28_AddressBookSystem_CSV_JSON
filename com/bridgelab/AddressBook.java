@@ -103,4 +103,19 @@ public class AddressBook {
 			System.out.println(adressBook);
 		}
 	}
+
+	/*
+	 * Added : DeleteContact Method
+	 */
+	public void deleteContact() {
+		System.out.println("confirm the name to delete contact");
+		String confirmName = sc.next();
+		for (int i = 0; i < adressBook.size(); i++) {
+			if (adressBook.get(i).getFirstName().equals(confirmName))
+				;
+			Person person = adressBook.get(i);
+			adressBook.remove(person);
+		}
+		System.out.println(adressBook);
+	}
 }
