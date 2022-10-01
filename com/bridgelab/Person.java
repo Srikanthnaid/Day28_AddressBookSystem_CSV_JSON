@@ -1,60 +1,42 @@
 package com.bridgelab;
 
 public class Person {
-	public String fName;
-	public String lName;
+	private String firstName;
+	private String lastName;
 	private String address;
-	public String city;
-	public String state;
-	private String zip;
-	private long phoneNo;
+	private String city;
+	private String state;
+	private int zip;
+	private long phoneNumber;
 	private String email;
 
-	/**
-	 * Create a Constructor and passing the parameters
-	 * 
-	 * @param fName
-	 * @param lName
-	 * @param address
-	 * @param city
-	 * @param state
-	 * @param zip
-	 * @param phoneNo
-	 * @param email
-	 */
-
-	public Person(String firstName, String lastName, String address2, String city2, String state2, String email2,
-			int zip1, long phoneNumber) {
-		this.fName = fName;
-		this.lName = lName; // this is used point the Current object
-		this.address = address;
-		this.city = city;
-		this.state = state;
-		this.zip = zip;
-		this.phoneNo = phoneNo;
-		this.email = email;
+	Person(String firstName, String lastName, String address, String city, String state, int zip, long phoneNumber,
+			String email) {
+		this.setFirstName(firstName);
+		this.setLastName(lastName);
+		;
+		this.setAddress(address);
+		this.setCity(city);
+		this.setState(state);
+		this.setZip(zip);
+		this.setPhoneNumber(phoneNumber);
+		this.setEmail(email);
 	}
 
-	/**
-	 * Create the getter and setter method to set the values
-	 * 
-	 * @return
-	 */
-
-	public String getfName() {
-		return fName;
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setfName(String fName) {
-		this.fName = fName;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 
-	public String getlName() {
-		return lName;
+	public String getLastName() {
+		return lastName;
 	}
 
-	public void setlName(String lName) {
-		this.lName = lName;
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
 	public String getAddress() {
@@ -63,30 +45,6 @@ public class Person {
 
 	public void setAddress(String address) {
 		this.address = address;
-	}
-
-	public String getZip() {
-		return zip;
-	}
-
-	public void setZip(String zip) {
-		this.zip = zip;
-	}
-
-	public long getPhoneNo() {
-		return phoneNo;
-	}
-
-	public void setPhoneNo(long phoneNo) {
-		this.phoneNo = phoneNo;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
 	}
 
 	public String getCity() {
@@ -105,13 +63,53 @@ public class Person {
 		this.state = state;
 	}
 
-	/**
-	 * @Override
-	 */
+	public int getZip() {
+		return zip;
+	}
 
+	public void setZip(int zip) {
+		this.zip = zip;
+	}
+
+	public long getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(long phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	Person() {
+
+	}
+
+	public Person(String firstName2, String lastName2, String address2, String city2, String state2, String email2,
+			int zip2, long phoneNumber2) {
+		this.firstName = firstName2;
+		this.lastName = lastName2;
+		this.address = address2;
+		this.city = city2;
+		this.state = state2;
+		this.zip = zip2;
+		this.phoneNumber = phoneNumber2;
+		this.email = email2;
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * created method print to display the data
+	 */
 	@Override
 	public String toString() {
-		return "Person Address [FirstName=" + fName + ", LastName=" + lName + ", address=" + address + ", city=" + city
-				+ ", state=" + state + ", zip=" + zip + ", phoneNo=" + phoneNo + ", email=" + email + "]" + "\n";
+		return "Person [firstName=" + firstName + ", lastName=" + lastName + ", address=" + address + ", city=" + city
+				+ ", state=" + state + ", zip=" + zip + ", phoneNumber=" + phoneNumber + ", email=" + email + "]";
 	}
 }
