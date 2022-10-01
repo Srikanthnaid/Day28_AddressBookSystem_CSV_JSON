@@ -3,6 +3,7 @@ package com.bridgelab;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
@@ -71,6 +72,22 @@ public class AddressBook {
 				System.out.println("Invalid Input");
 			}
 		}
+	}
+
+	public void getCountOfCityAndState() {
+		Map<String, Map<String, Long>> people = adressBook.stream().collect(
+				Collectors.groupingBy(Person::getCity, Collectors.groupingBy(Person::getState, Collectors.counting())));
+		System.out.println("After counting by city and state is:-" + people);
+	}
+
+	/*
+	 * Create method ViewPersonByCityOrstate
+	 */
+	public void viewPersonByCityOrState() {
+		Map<String, Map<String, List<Person>>> people1 = adressBook.stream()
+				.collect(Collectors.groupingBy(Person::getCity, Collectors.groupingBy(Person::getState)));
+		System.out.println("After grouping by city is:-" + people1);
+
 	}
 
 	/*
