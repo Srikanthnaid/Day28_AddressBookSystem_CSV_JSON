@@ -2,7 +2,9 @@ package com.bridgelab;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class AddressBook {
 	static Scanner sc = new Scanner(System.in);
@@ -69,6 +71,13 @@ public class AddressBook {
 				System.out.println("Invalid Input");
 			}
 		}
+	}
+
+	public void removeDuplicates(String personName) {
+		List<Person> AfterRemoveDuplicates = adressBook.stream()
+				.filter(person -> person.getFirstName().equalsIgnoreCase(personName)).distinct()
+				.collect(Collectors.toList());
+		System.out.println("After a removing duplicate elements" + AfterRemoveDuplicates);
 	}
 
 	/**
@@ -181,6 +190,10 @@ public class AddressBook {
 		}
 		System.out.println(adressBook);
 	}
+
+	/*
+	 * Disply the method contact deatils for person
+	 */
 
 	public void display() {
 		for (int i = 0; i < adressBook.size(); i++) {
