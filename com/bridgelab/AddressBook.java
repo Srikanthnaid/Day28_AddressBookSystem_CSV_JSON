@@ -118,4 +118,19 @@ public class AddressBook {
 		}
 		System.out.println(adressBook);
 	}
+	/*
+	 * Added : Display Method AddressBook
+	 */
+
+	public void display() {
+		for (int i = 0; i < adressBook.size(); i++) {
+			Person person = adressBook.get(i);
+			System.out.println("FirstName" + ":=" + person.getFirstName() + "\n" + "lastname" + ":= "
+					+ person.getLastName() + "\n" + "Address" + ":= " + person.getAddress() + "\n" + "City" + ":= "
+					+ person.getCity() + "\n" + "State" + ":=" + person.getState() + "\n" + "Zip" + ":= "
+					+ person.getZip() + "\n" + "PhoneNumber" + ":= " + person.getPhoneNumber() + "\n" + "Email" + ":= "
+					+ person.getEmail());
+		}
+
+	}
 }
