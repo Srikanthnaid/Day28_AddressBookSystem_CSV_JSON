@@ -73,6 +73,20 @@ public class AddressBook {
 		}
 	}
 
+	/*
+	 * Search the person deatils
+	 */
+
+	public void searchPersonInCityOrState(String city, String state) {
+		List<Person> seachPerson = adressBook.stream().filter(person -> person.getCity().equals(city))
+				.filter(person -> person.getState().equals(state)).collect(Collectors.toList());
+		System.out.println("After searching person in a city or state is:" + seachPerson);
+	}
+
+	/*
+	 * Remove the dublicate elements
+	 */
+
 	public void removeDuplicates(String personName) {
 		List<Person> AfterRemoveDuplicates = adressBook.stream()
 				.filter(person -> person.getFirstName().equalsIgnoreCase(personName)).distinct()
